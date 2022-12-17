@@ -47,12 +47,11 @@ public class Parent {
 
     public void verifyContainsTextFunction(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()), "The text you searched couldn't be find.");
+        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"The text you searched couldn't be find.");
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
     }
 
     public void verifyContainsTextFunctionFalse(WebElement element, String value) {
-
         waitUntilVisible(element); // gözükene kadar bekle
         wait.until(ExpectedConditions.textToBePresentInElement(element,value));
         Assert.assertFalse(element.getText().toLowerCase().contains(value.toLowerCase()), "The text you searched could'nt be find");

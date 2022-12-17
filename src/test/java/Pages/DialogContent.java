@@ -30,6 +30,28 @@ public class DialogContent extends Parent{
     @FindBy(css = "button[class='consent-give']")
     private WebElement acceptCookies;
 
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button") // omer
+    private WebElement addButton; // ortak Locator
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input") // omer
+    private WebElement nameInput; // ortak Locator
+
+    @FindBy(xpath = "//span[contains(text(),'Save')]") // omer
+    private WebElement saveButton; // ortak Locator
+
+    @FindBy(xpath = "//span[contains(text(),'Search')]") // omer
+    private WebElement searchButton; // ortak Locator
+
+    @FindBy(xpath = "//input[@data-placeholder='Name']") // omer
+    private WebElement searchInput; // ortak Locator
+
+    @FindBy(xpath = "//ms-delete-button//button") // omer
+    private WebElement deleteButton; // ortak Locator
+
+    @FindBy(xpath = "//span[contains(text(),' Delete ')]") // omer
+    private WebElement deleteDialogButton; // ortak Locator
+
+
 
 
 
@@ -43,7 +65,8 @@ public class DialogContent extends Parent{
         {
             case "username" : myElement=username;break;
             case "password" : myElement=password;break;
-
+            case "nameInput" : myElement=nameInput;break;
+            case "searchInput" : myElement=searchInput;break;
 
 
         }
@@ -54,6 +77,11 @@ public class DialogContent extends Parent{
         switch (Strlement)
         {
             case "loginButton" : myElement=loginButton;break;
+            case "addButton" : myElement=addButton;break;
+            case "saveButton" : myElement=saveButton;break;
+            case "searchButton" : myElement=searchButton;break;
+            case "deleteButton" : myElement=deleteButton;break;
+            case "deleteDialogButton" : myElement=deleteDialogButton;break;
 
 
 
@@ -67,16 +95,17 @@ public class DialogContent extends Parent{
             case "txtTechnoStudy" : myElement=txtTechnoStudy;break;
             case "successMessage" : myElement=successMessage;break;
 
-
         }
         verifyContainsTextFunction(myElement,text);
     }
     public void findAndDelete(String searchText) {
-
-
+        findAndSend("searchInput", searchText);  // aranacak kelimeyi kutucuğa gönder
+        findAndClick("searchButton"); // arama butonuna bas
 
         waitUntilLoading(); // progressbar ın çocukları 0 olana kadar bekle
 
+        findAndClick("deleteButton"); // silme butonua bas, çöp kutusu
+        findAndClick("deleteDialogButton"); // dilogdaki silme butonuna bas
 
     }
 }

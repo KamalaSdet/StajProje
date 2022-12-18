@@ -27,7 +27,7 @@ public class _02_PositionCategories {
 
      @Then("Success message should be displayed")
      public void successMessageShouldBeDisplayed() {
-         dc.findAndContainsText("successMessage","success");
+         dc.findAndContainsText("successMessage","successfully");
      }
 
     @When("User add {string} in Position Categories")

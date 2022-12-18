@@ -24,7 +24,7 @@ public class DialogContent extends Parent{
     @FindBy(css = "span[class='mat-tooltip-trigger logo-text']")
     private WebElement txtTechnoStudy;
 
-    @FindBy(xpath = "//div[contains(text(),'succesfully')]")
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
 
     @FindBy(css = "button[class='consent-give']")

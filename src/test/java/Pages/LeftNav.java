@@ -22,6 +22,9 @@ public class LeftNav extends Parent{
     @FindBy(xpath = "//span[contains(text(),'Position Categories')]") // omer
     private WebElement positionCategories;
 
+    @FindBy(xpath = "(//span[text()='Attestations'])[1]") // Ali
+    private WebElement Attestations;
+
 
 
 
@@ -34,6 +37,7 @@ public class LeftNav extends Parent{
             case "humanRsrButton":myElement=humanRsrButton;break;
             case "setupButtonUnderHuman":myElement=setupButtonUnderHuman;break;
             case "positionCategories":myElement=positionCategories;break;
+            case "Attestations":myElement=Attestations;break;
         }
         clickFunction(myElement);
     }

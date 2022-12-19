@@ -1,12 +1,7 @@
 package Pages;
 
 import Utilities.GWD;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -56,25 +51,6 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//span[contains(text(),' Delete ')]") // omer
     private WebElement deleteDialogButton; // ortak Locator
 
-    @FindBy(xpath = "//input[@data-placeholder='Short Name']") // omer
-    private WebElement shortNameInput;
-
-    @FindBy(xpath = "(//mat-select[@role='combobox'])[2]") // omer
-    private WebElement locationsTypes;
-
-    @FindBy(xpath = "//span[contains(text(),'Other')]") // omer
-    private WebElement otherTypes;
-
-    @FindBy(xpath = "//input[@data-placeholder='Capacity']") // omer
-    private WebElement capasityInput;
-
-    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']") // omer
-    private WebElement toggleBar;
-
-
-
-
-
 
 
 
@@ -91,8 +67,6 @@ public class DialogContent extends Parent{
             case "password" : myElement=password;break;
             case "nameInput" : myElement=nameInput;break;
             case "searchInput" : myElement=searchInput;break;
-            case "shortNameInput" : myElement=shortNameInput;break;
-            case "capasityInput" : myElement=capasityInput;break;
 
 
         }
@@ -109,9 +83,7 @@ public class DialogContent extends Parent{
             case "deleteButton" : myElement=deleteButton;break;
             case "deleteDialogButton" : myElement=deleteDialogButton;break;
             case "acceptCookies" : myElement=acceptCookies;break;
-            case "locationsTypes" : myElement=locationsTypes;break;
-            case "otherTypes" : myElement=otherTypes;break;
-            case "toggleBar" : myElement=toggleBar;break;
+
 
 
         }
@@ -136,10 +108,5 @@ public class DialogContent extends Parent{
         findAndClick("deleteButton"); // silme butonua bas, çöp kutusu
         findAndClick("deleteDialogButton"); // dilogdaki silme butonuna bas
 
-    }
-    public void findAndDelete2(){
-        findAndClick("deleteButton"); // silme butonua bas, çöp kutusu
-        waitUntilLoading(); // progressbar ın çocukları 0 olana kadar bekle
-        findAndClick("deleteDialogButton"); // dilogdaki silme butonuna bas
     }
 }

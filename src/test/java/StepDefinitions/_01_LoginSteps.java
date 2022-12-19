@@ -28,6 +28,7 @@ public class _01_LoginSteps {
         dc.findAndSend("username","turkeyts"); // richfield.edu
         dc.findAndSend("password","TechnoStudy123"); // Richfield2020!
         dc.findAndClick("loginButton");
+        dc.findAndClick("acceptCookies");
 
 
 
@@ -36,7 +37,7 @@ public class _01_LoginSteps {
     @Then("User should login successfuly")
     public void userShouldLoginSuccessfuly() {
         dc.findAndContainsText("txtTechnoStudy","Techno Study");
-        dc.findAndClick("acceptCookies");
+
 
     }
 }

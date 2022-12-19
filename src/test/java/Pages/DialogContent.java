@@ -82,6 +82,7 @@ public class DialogContent extends Parent{
             case "searchButton" : myElement=searchButton;break;
             case "deleteButton" : myElement=deleteButton;break;
             case "deleteDialogButton" : myElement=deleteDialogButton;break;
+            case "acceptCookies" : myElement=acceptCookies;break;
 
 
 

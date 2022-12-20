@@ -73,6 +73,17 @@ public class DialogContent extends Parent{
 
 
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
+    private WebElement codeInput;
+
+
+    @FindBy(xpath = "//ms-add-button['tooltip=GENERAL.BUTTON.ADD']//button")
+    private WebElement addButton2;  //kamala
+
+
+
+
+
 
 
 
@@ -90,6 +101,7 @@ public class DialogContent extends Parent{
             case "username" : myElement=username;break;
             case "password" : myElement=password;break;
             case "nameInput" : myElement=nameInput;break;
+            case "codeInput" : myElement=codeInput;break;
             case "searchInput" : myElement=searchInput;break;
             case "shortNameInput" : myElement=shortNameInput;break;
             case "capasityInput" : myElement=capasityInput;break;
@@ -112,6 +124,7 @@ public class DialogContent extends Parent{
             case "locationsTypes" : myElement=locationsTypes;break;
             case "otherTypes" : myElement=otherTypes;break;
             case "toggleBar" : myElement=toggleBar;break;
+            case "addButton2" : myElement=addButton2;break;
 
 
         }

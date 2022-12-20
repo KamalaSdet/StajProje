@@ -25,6 +25,23 @@ public class LeftNav extends Parent{
     @FindBy(xpath = "(//span[text()='Attestations'])[1]") // Ali
     private WebElement Attestations;
 
+    @FindBy(xpath="(//span[text()='Fields'])")
+    private WebElement fields; //kamala
+
+    @FindBy(xpath="(//span[text()='Setup'])[1]")  //kamala
+    private WebElement setupOne;
+
+    @FindBy(xpath="(//span[text()='Parameters'])")   //kamala
+    private WebElement parameters;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -38,6 +55,10 @@ public class LeftNav extends Parent{
             case "setupButtonUnderHuman":myElement=setupButtonUnderHuman;break;
             case "positionCategories":myElement=positionCategories;break;
             case "Attestations":myElement=Attestations;break;
+            case "fields":myElement=fields;break;
+            case "setupOne" : myElement=setupOne;break;
+            case "parameters" : myElement=parameters;break;
+
         }
         clickFunction(myElement);
     }
